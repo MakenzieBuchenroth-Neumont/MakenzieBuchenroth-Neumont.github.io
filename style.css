@@ -1,2 +1,70 @@
-margin-left: 20px;
-margin-right: 20px;
+/* Set height of body and the document to 100% to enable "full page tabs" */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+
+.dark-mode {
+background-color: black;
+color: white;
+       }
+
+.light-mode {
+  background-color: white;
+  color: black;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #FFB6C1;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 33.333%;
+}
+
+.tablink:hover {
+  background-color: #DB7093;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: inherit;
+  background-color: inherit;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+#About {background-color: inherit;;}
+#Games {background-color: inherit;;}
+#Contact {background-color: inherit;;}
+
+
+.btn {
+  border: none;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* On mouse-over */
+.btn:hover {background: #eee;}
+
+.info {color: inherit;}

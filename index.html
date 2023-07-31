@@ -4,8 +4,46 @@
     <meta charset="utf-8">
     <title>Makenzie Buchenroth - Game Development</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
   </head>
   <body>
-<a href="HothAsteroidField_Setup.zip">Download Hoth Asteroid Field</a>
+
+<button class="tablink" onclick="openPage('About', this, '#F08080')" id="defaultOpen">About</button>
+<button class="tablink" onclick="openPage('Games', this, '#FA8072')">Games</button>
+<button class="tablink" onclick="openPage('Contact', this, '#E9967A')">Contact</button>
+
+
+<div id="About" class="tabcontent">
+  <h3>About</h3>
+  <p>Home is where the heart is..</p>
+</div>
+
+<div id="Games" class="tabcontent">
+  <div class="gamesTable">
+    <div class="row">
+        <div class="column">
+            <img src="Images/HAF.png" alt="Snow" style="width:100%">
+            <center>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Hoth Asteroid Field</a>
+        </div>
+        <div class="column">
+        </div>
+        <div class="column">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div id="Contact" class="tabcontent">
+  <h3>Contact</h3>
+  <p>Get in touch, or swing by for a cup of coffee.</p>
+</div>
+
   </body>
+
+  <footer>
+    <div>
+        <button class="btn info" onclick="darkMode()">Toggle Dark Mode</button>
+    </div>
+  </footer>
 </html>
