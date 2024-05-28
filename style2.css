@@ -1,0 +1,192 @@
+.container {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-areas: "header header"
+  "article-2 article-3"
+  "article-2 article-3"
+  "article-6 article-7"
+  "article-6 article-7"
+  "footer footer";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 80px 1fr 1fr 1fr 1fr 80px;
+  font-family: Freeman;
+}
+.container > div {
+}
+
+.header {
+  grid-area: header;
+  justify-content: space-between;
+  display: flex;
+}
+
+.header .left {
+    text-align: left;
+}
+
+.header .right {
+  display: flex;
+  grid-gap: 10px;
+  text-align: right;
+}
+
+.header .right a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: black;
+}
+.article-2 {
+    grid-area: article-2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px 0;
+}
+
+.article-2 .left {
+    text-align: left;
+    margin-left: 5px;
+    margin-right: 5px; /* Adjust the margin as needed */
+    max-width: 50%; /* Adjust as needed */
+}
+
+.article-2 img {
+    display: block;
+    max-width: 75%;
+    height: auto;
+    margin-left: auto;
+    margin-right: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.article-3 {
+  grid-area: article-3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 10px 0;
+}
+
+.article-3 .left {
+    text-align: left;
+    margin-left: 5px;
+    margin-right: 5px; /* Adjust the margin as needed */
+    max-width: 50%; /* Adjust as needed */
+}
+
+.article-3 img {
+    display: block;
+    max-width: 75%;
+    height: auto;
+    margin-left: auto;
+    margin-right: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.article-6 {
+  grid-area: article-6;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 10px 0;
+}
+
+.article-6 .left {
+    text-align: left;
+    margin-left: 5px;
+    margin-right: 5px; /* Adjust the margin as needed */
+    max-width: 50%; /* Adjust as needed */
+}
+
+.article-6 img {
+    display: block;
+    max-width: 75%;
+    height: auto;
+    margin-left: auto;
+    margin-right: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.article-7 {
+  grid-area: article-7;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 10px 0;
+}
+
+.article-7 .left {
+    text-align: left;
+    margin-left: 5px;
+    margin-right: 5px; /* Adjust the margin as needed */
+    max-width: 50%; /* Adjust as needed */
+}
+
+.article-7 img {
+    display: block;
+    max-width: 75%;
+    height: auto;
+    margin-left: auto;
+    margin-right: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.footer {
+  grid-area: footer;
+}
+.footer a {
+  text-decoration: none;
+  color: black;
+  grid-gap: 5px;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+li {
+  margin: 0 10px;
+  display: inline-block;
+  position: relative;
+  padding: 15px 0;
+}
+a {
+  color: black;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.15em;
+
+  display: inline-block;
+  padding: 15px 20px;
+  position: relative;
+}
+a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+a:hover:after {
+  width: 100%;
+  left: 0;
+}
+@media screen and (max-height: 300px) {
+	ul {
+		margin-top: 40px;
+	}
+}
