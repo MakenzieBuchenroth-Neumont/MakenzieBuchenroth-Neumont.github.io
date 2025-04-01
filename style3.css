@@ -1,0 +1,134 @@
+.container {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-areas: "header"
+  "main"
+  "footer";
+  grid-template-columns: 4fr;
+  grid-template-rows: 80px 1fr 80px;
+  font-family: Freeman;
+}
+.container > div {
+}
+
+.header {
+  grid-area: header;
+  justify-content: space-between;
+  display: flex;
+}
+
+.header .left {
+    text-align: left;
+}
+
+.header .right {
+  display: flex;
+  grid-gap: 10px;
+  text-align: right;
+}
+
+.header .right a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+
+.main {
+  grid-area: main;
+}
+.footer {
+  grid-area: footer;
+}
+
+.footer a {
+  text-decoration: none;
+  color: black;
+  grid-gap: 5px;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+li {
+  margin: 0 10px;
+  display: inline-block;
+  position: relative;
+  padding: 15px 0;
+}
+a {
+  color: black;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.15em;
+
+  display: inline-block;
+  padding: 15px 20px;
+  position: relative;
+}
+a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+a:hover:after {
+  width: 100%;
+  left: 0;
+}
+@media screen and (max-height: 300px) {
+	ul {
+		margin-top: 40px;
+	}
+}
+
+.me {
+	 display: block;
+	 margin: 2em auto;
+	 margin-bottom: 3em;
+	 width: 150px;
+	 height: 150px;
+	 border-radius: 50%;
+	 position: relative;
+	 z-index: 2;
+}
+ .social {
+	 text-align: center;
+	 font-size: 2.5em;
+	 color: #555;
+	 overflow: hidden;
+}
+ .social a {
+	 color: inherit;
+	 text-decoration: none;
+}
+ .social i {
+	 margin: 0.3em;
+	 cursor: pointer;
+	 transition: color 300ms ease, margin-top 300ms ease;
+	 transform: translateZ(0);
+}
+ .social i:hover {
+	 margin-top: -1px;
+}
+ .social i#github:hover {
+	 color: black;
+}
+ .social i#linkedin:hover {
+	 color: #0177b5;
+}
+ .social i#itch:hover {
+	 color: #f7b401;
+}
