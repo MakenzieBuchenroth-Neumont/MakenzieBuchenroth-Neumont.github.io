@@ -115,16 +115,17 @@ for(let i = 0; i < formInputs.length; i++) {
 const navigationLinks = document.querySelectorAll('[data-nav-link]');
 const pages = document.querySelectorAll('[data-page]');
 
-for (let i = 0; i < navigationLinks.length; i++) {
+for(let i = 0; i < navigationLinks.length; i++) {
     navigationLinks[i].addEventListener('click', function() {
-        for (let j = 0; j < pages.length; j++) {
-            if (this.innerHTML.toLowerCase() == pages[j].dataset.page) {
-                pages[j].classList.add('active');
+
+        for(let i = 0; i < pages.length; i++) {
+            if(this.innerHTML.toLowerCase() == pages[i].dataset.page) {
+                pages[i].classList.add('active');
                 navigationLinks[i].classList.add('active');
                 window.scrollTo(0, 0);
             } else {
-                pages[j].classList.remove('active');
-                navigationLinks[j].classList.remove('active');  // Fix indexing here
+                pages[i].classList.remove('active');
+                navigationLinks[i]. classList.remove('active');
             }
         }
     });
