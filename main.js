@@ -110,24 +110,25 @@ for(let i = 0; i < formInputs.length; i++) {
     })
 }
 
-// Enabling Page Navigation
-const navigationLinks = document.querySelectorAll('[data-nav-link]');
-const pages = document.querySelectorAll('[data-page]');
+document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll("[data-nav-link]");
+    const pages = document.querySelectorAll("[data-page]");
 
-navigationLinks.forEach((link) => {
-    link.addEventListener('click', function() {
-        const targetPage = this.textContent.trim().toLowerCase(); // Get page name
+    navLinks.forEach(link => {
+        link.addEventListener("click", function () {
+            const targetPage = this.textContent.trim().toLowerCase(); // Get the target page
 
-        // Remove active class from all navbar links & pages
-        navigationLinks.forEach(btn => btn.classList.remove('active'));
-        pages.forEach(page => page.classList.remove('active'));
+            // Remove 'active' from all buttons & pages
+            navLinks.forEach(btn => btn.classList.remove("active"));
+            pages.forEach(page => page.classList.remove("active"));
 
-        // Add active class to the clicked link and the corresponding page
-        this.classList.add('active');
-        const activePage = document.querySelector(`[data-page="${targetPage}"]`);
-        if (activePage) activePage.classList.add('active');
+            // Add 'active' to the clicked button and matching page
+            this.classList.add("active");
+            const activePage = document.querySelector(`[data-page="${targetPage}"]`);
+            if (activePage) activePage.classList.add("active");
 
-        // Scroll to top
-        window.scrollTo(0, 0);
+            // Scroll to top (optional)
+            window.scrollTo(0, 0);
+        });
     });
 });

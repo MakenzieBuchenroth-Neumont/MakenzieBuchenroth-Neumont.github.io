@@ -160,16 +160,6 @@ article { display: none; }
         font-weight: var(--fw500);
     }
 
-    article {
-    display: none; /* Hide all sections by default */
-}
-
-article.active {
-    display: block; /* Show only the active section */
-}
-
-
-
 .article-title {
     position: relative;
     padding-bottom: 7px;
