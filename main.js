@@ -109,23 +109,35 @@ for(let i = 0; i < formInputs.length; i++) {
         }
     })
 }
-const navigationLinks = document.querySelectorAll('[data-nav-link]');
-const pages = document.querySelectorAll('[data-page]');
 
-navigationLinks.forEach(navLink => {
-    navLink.addEventListener('click', function() {
-        const targetPage = this.getAttribute('data-nav-link'); // Get the data attribute value
+document.addEventListener('DOMContentLoaded', () => {
+    const navigationLinks = document.querySelectorAll('[data-nav-link]');
+    const pages = document.querySelectorAll('[data-page]');
 
-        // Remove 'active' class from all pages and nav links
-        pages.forEach(page => page.classList.remove('active'));
-        navigationLinks.forEach(link => link.classList.remove('active'));
+    navigationLinks.forEach(navLink => {
+        navLink.addEventListener('click', function() {
+            const targetPage = this.getAttribute('data-nav-link'); // Get the section name
 
-        // Add 'active' class to the clicked nav link and corresponding page
-        document.querySelector(`[data-page="${targetPage}"]`).classList.add('active');
-        this.classList.add('active');
+            console.log(`Clicked on: ${targetPage}`); // Debugging
 
-        // Scroll to top when navigating
-        window.scrollTo(0, 0);
+            // Remove 'active' from all pages and nav links
+            pages.forEach(page => page.classList.remove('active'));
+            navigationLinks.forEach(link => link.classList.remove('active'));
+
+            // Add 'active' to the clicked nav link and target page
+            const targetElement = document.querySelector(`[data-page="${targetPage}"]`);
+            if (targetElement) {
+                targetElement.classList.add('active');
+                console.log(`Activated page: ${targetPage}`);
+            } else {
+                console.error(`No matching page found for: ${targetPage}`);
+            }
+
+            this.classList.add('active'); // Highlight the active nav link
+
+            // Scroll to top when navigating
+            window.scrollTo(0, 0);
+        });
     });
 });
 
