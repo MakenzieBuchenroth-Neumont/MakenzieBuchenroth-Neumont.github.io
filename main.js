@@ -9,38 +9,6 @@ const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
 sidebarBtn.addEventListener("click", function() {elementToggleFunc(sidebar); })
 
-//Activating Modal-testimonial
-
-const testimonialsItem = document.querySelectorAll('[data-testimonials-item]');
-const modalContainer = document.querySelector('[data-modal-container]');
-const modalCloseBtn = document.querySelector('[data-modal-close-btn]');
-const overlay = document.querySelector('[data-overlay]');
-
-const modalImg = document.querySelector('[data-modal-img]');
-const modalTitle = document.querySelector('[data-modal-title]');
-const modalText = document.querySelector('[data-modal-text]');
-
-const testimonialsModalFunc = function () {
-    modalContainer.classList.toggle('active');
-    overlay.classList.toggle('active');
-}
-
-for (let i = 0; i < testimonialsItem.length; i++) {
-    testimonialsItem[i].addEventListener('click', function () {
-        modalImg.src = this.querySelector('[data-testimonials-avatar]').src;
-        modalImg.alt = this.querySelector('[data-testimonials-avatar]').alt;
-        modalTitle.innerHTML = this.querySelector('[data-testimonials-title]').innerHTML;
-        modalText.innerHTML = this.querySelector('[data-testimonials-text]').innerHTML;
-
-        testimonialsModalFunc();
-    })
-}
-
-//Activating close button in modal-testimonial
-
-modalCloseBtn.addEventListener('click', testimonialsModalFunc);
-overlay.addEventListener('click', testimonialsModalFunc);
-
 //Activating Filter Select and filtering options
 
 const select = document.querySelector('[data-select]');
@@ -115,7 +83,7 @@ const pages = document.querySelectorAll('[data-page]');
 
 navigationLinks.forEach(navLink => {
     navLink.addEventListener('click', function() {
-        const targetPage = this.getAttribute('data-nav-link'); // Get the section name
+        const targetPage = this.dataset.navLink; // Get target page name
 
         console.log(`Clicked on: ${targetPage}`); // Debugging
 
