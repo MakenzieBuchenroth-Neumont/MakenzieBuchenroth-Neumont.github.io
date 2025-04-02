@@ -161,11 +161,13 @@ article { display: none; }
     }
 
     article {
-        display: none;
-    }
-    article.active {
-        display: block;
-    }
+    display: none; /* Hide all sections by default */
+}
+
+article.active {
+    display: block; /* Show only the active section */
+}
+
 
 
 .article-title {
