@@ -109,20 +109,39 @@ for(let i = 0; i < formInputs.length; i++) {
         }
     })
 }
-
 const navigationLinks = document.querySelectorAll('[data-nav-link]');
 const pages = document.querySelectorAll('[data-page]');
 
-for(let i = 0; i < navigationLinks.length; i++) {
-    navigationLinks[i].addEventListener('click', function() {
+navigationLinks.forEach(navLink => {
+    navLink.addEventListener('click', function() {
+        const targetPage = this.getAttribute('data-nav-link'); // Get the data attribute value
 
-        for(let i = 0; i < pages.length; i++) {
-            if(this.innerHTML.toLowerCase() == pages[i].dataset.page) {
-                pages[i].classList.add('active');
-                navigationLinks[i].classList.add('active');
-                window.scrollTo(0, 0);
-            } else {
-                pages[i].classList.remove('active');
-                navigationLinks[i]. classList.remove('active');
-            }
-        }
+        // Remove 'active' class from all pages and nav links
+        pages.forEach(page => page.classList.remove('active'));
+        navigationLinks.forEach(link => link.classList.remove('active'));
+
+        // Add 'active' class to the clicked nav link and corresponding page
+        document.querySelector(`[data-page="${targetPage}"]`).classList.add('active');
+        this.classList.add('active');
+
+        // Scroll to top when navigating
+        window.scrollTo(0, 0);
+    });
+});
+
+//const navigationLinks = document.querySelectorAll('[data-nav-link]');
+//const pages = document.querySelectorAll('[data-page]');
+
+//for(let i = 0; i < navigationLinks.length; i++) {
+    //navigationLinks[i].addEventListener('click', function() {
+
+        //for(let i = 0; i < pages.length; i++) {
+            //if(this.innerHTML.toLowerCase() == pages[i].dataset.page) {
+                //pages[i].classList.add('active');
+                //navigationLinks[i].classList.add('active');
+                //window.scrollTo(0, 0);
+            //} else {
+                //pages[i].classList.remove('active');
+                //navigationLinks[i]. classList.remove('active');
+            //}
+        //}
