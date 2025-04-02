@@ -110,34 +110,32 @@ for(let i = 0; i < formInputs.length; i++) {
     })
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const navigationLinks = document.querySelectorAll('[data-nav-link]');
-    const pages = document.querySelectorAll('[data-page]');
+const navigationLinks = document.querySelectorAll('[data-nav-link]');
+const pages = document.querySelectorAll('[data-page]');
 
-    navigationLinks.forEach(navLink => {
-        navLink.addEventListener('click', function() {
-            const targetPage = this.getAttribute('data-nav-link'); // Get the section name
+navigationLinks.forEach(navLink => {
+    navLink.addEventListener('click', function() {
+        const targetPage = this.getAttribute('data-nav-link'); // Get the section name
 
-            console.log(`Clicked on: ${targetPage}`); // Debugging
+        console.log(`Clicked on: ${targetPage}`); // Debugging
 
-            // Remove 'active' from all pages and nav links
-            pages.forEach(page => page.classList.remove('active'));
-            navigationLinks.forEach(link => link.classList.remove('active'));
+        // Remove 'active' from all pages and nav links
+        pages.forEach(page => page.classList.remove('active'));
+        navigationLinks.forEach(link => link.classList.remove('active'));
 
-            // Add 'active' to the clicked nav link and target page
-            const targetElement = document.querySelector(`[data-page="${targetPage}"]`);
-            if (targetElement) {
-                targetElement.classList.add('active');
-                console.log(`Activated page: ${targetPage}`);
-            } else {
-                console.error(`No matching page found for: ${targetPage}`);
-            }
+        // Add 'active' to the clicked nav link and target page
+        const targetElement = document.querySelector(`[data-page="${targetPage}"]`);
+        if (targetElement) {
+            targetElement.classList.add('active');
+            console.log(`Activated page: ${targetPage}`);
+        } else {
+            console.error(`No matching page found for: ${targetPage}`);
+        }
 
-            this.classList.add('active'); // Highlight the active nav link
+        this.classList.add('active'); // Highlight the active nav link
 
-            // Scroll to top when navigating
-            window.scrollTo(0, 0);
-        });
+        // Scroll to top when navigating
+        window.scrollTo(0, 0);
     });
 });
 
