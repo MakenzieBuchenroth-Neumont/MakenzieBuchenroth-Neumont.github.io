@@ -6,7 +6,7 @@
     --bg-gradient-yellow1: linear-gradient(to bottom right, hsl(336.1,100%,72%) 0%, hsla(336.2,100%,62%, 0) 50%);
     --bg-gradient-yellow2: linear-gradient(135deg, hsla(336.1,100%,72% .251) 0%, hsla(336.2,100%,62% 0) 59.86%), hsl(240, 2%, 13%);
     --border-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%);
-    --text-gradient-yellow: linear-gradient(to right, hsl(45, 100%, 72%), hsl(35, 100%, 68%));
+    --text-gradient-yellow: linear-gradient(to right, hsl(336.1,100%,72%), hsl(336.2,100%,62%));
 
     --jet: hsl(0, 0%, 22%);
     --onyx: hsl(240, 1%, 17%);
