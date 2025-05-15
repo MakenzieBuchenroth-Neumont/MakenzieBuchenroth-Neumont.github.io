@@ -85,6 +85,27 @@ html { font-family: var(--ff-poppins); }
 
 body { background: var(--smoky-black); }
 
+.notification-box {
+    background: var(--orange-yellow-crayola);
+    color: var(--smoky-black);
+    text-align: center;
+    padding: 10px;
+    font-weight: var(--fw500);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.notification-box a {
+    color: var(--smoky-black);
+    text-decoration: underline;
+    font-weight: var(--fw600);
+}
+
+.notification-box a:hover {
+    opacity: 0.8;
+}
+
 main {
     margin: 15px 12px;
     margin-bottom: 75px;
