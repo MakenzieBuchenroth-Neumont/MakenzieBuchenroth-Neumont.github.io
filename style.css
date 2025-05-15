@@ -86,20 +86,33 @@ html { font-family: var(--ff-poppins); }
 body { background: var(--smoky-black); }
 
 .notification-box {
-    background: var(--orange-yellow-crayola);
-    color: var(--smoky-black);
+    background: var(--eerie-black2);
+    color: var(--white2);
     text-align: center;
-    padding: 10px;
-    font-weight: var(--fw500);
+    padding: 15px;
+    font-weight: var(--fw400);
     position: sticky;
     top: 0;
     z-index: 100;
+    border: 1px solid var(--jet);
+    border-radius: 20px;
+    margin: 15px auto;
+    box-shadow: var(--shadow1);
+    max-width: 1225px;
+    width: calc(100vw - 24px);
+    left: 0;
+    right: 0;
+}
+
+.notification-box::before {
+    display: none;
 }
 
 .notification-box a {
-    color: var(--smoky-black);
+    color: var(--orange-yellow-crayola);
     text-decoration: underline;
-    font-weight: var(--fw600);
+    font-weight: var(--fw500);
+    transition: var(--transition1);
 }
 
 .notification-box a:hover {
