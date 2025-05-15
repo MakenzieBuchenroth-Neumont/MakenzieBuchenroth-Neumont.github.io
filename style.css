@@ -90,6 +90,8 @@ body {
 
 
 main {
+    display: flex;
+    align-items: stretch;
     margin: 0 12px 75px 12px;
     min-width: 259px;
 }
@@ -219,10 +221,10 @@ article { display: none; }
 /*ASIDE - SIDEBAR*/
 
 .sidebar {
+    height: auto;
+    max-height: none;
     margin-top: 0;
     margin-bottom: 15px;
-    max-height: 112px;
-    overflow: hidden;
     padding: 15px;
     transition: var(--transition2);
 }
@@ -1489,4 +1491,10 @@ textarea.form-input {
 
 .main-content {
     margin-top: 0;
+}
+
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+  }
 }
