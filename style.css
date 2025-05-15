@@ -221,13 +221,12 @@ article { display: none; }
 /*ASIDE - SIDEBAR*/
 
 .sidebar {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 320px;
-    min-width: 260px;
-    max-width: 400px;
-    margin-bottom: 0;
+    height: auto;
+    max-height: none;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding: 15px;
+    transition: var(--transition2);
 }
 
 .sidebar-info {
@@ -1491,8 +1490,7 @@ textarea.form-input {
 }
 
 .main-content {
-    flex: 1;
-    min-width: 0;
+    margin-top: 0;
 }
 
 @media (max-width: 900px) {
