@@ -1,90 +1,125 @@
 'use strict';
 
-// Utility Functions
-const toggleClass = (element, className = 'active') => element.classList.toggle(className);
-const addClass = (element, className = 'active') => element.classList.add(className);
-const removeClass = (element, className = 'active') => element.classList.remove(className);
-const scrollToTop = () => window.scrollTo(0, 0);
+//Opening or closing side bar
 
-// DOM Elements
-const elements = {
-    sidebar: document.querySelector('[data-sidebar]'),
-    sidebarBtn: document.querySelector('[data-sidebar-btn]'),
-    select: document.querySelector('[data-select]'),
-    selectValue: document.querySelector('[data-select-value]'),
-    selectItems: document.querySelectorAll('[data-select-item]'),
-    filterItems: document.querySelectorAll('[data-filter-item]'),
-    filterBtns: document.querySelectorAll('[data-filter-btn]'),
-    form: document.querySelector('[data-form]'),
-    formInputs: document.querySelectorAll('[data-form-input]'),
-    formBtn: document.querySelector('[data-form-btn]'),
-    navLinks: document.querySelectorAll('[data-nav-link]'),
-    pages: document.querySelectorAll('[data-page]')
-};
+const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
 
-// Sidebar Toggle
-elements.sidebarBtn.addEventListener('click', () => toggleClass(elements.sidebar));
+const sidebar = document.querySelector("[data-sidebar]");
+const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
-// Filter Functionality
-const filterItems = (selectedValue) => {
-    elements.filterItems.forEach(item => {
-        const shouldShow = selectedValue === 'all' || selectedValue === item.dataset.category;
-        shouldShow ? addClass(item) : removeClass(item);
+sidebarBtn.addEventListener("click", function() {elementToggleFunc(sidebar); })
+
+//Activating Filter Select and filtering options
+
+const select = document.querySelector('[data-select]');
+const selectItems = document.querySelectorAll('[data-select-item]');
+const selectValue = document.querySelector('[data-select-value]');
+const filterBtn = document.querySelectorAll('[data-filter-btn]');
+
+select.addEventListener('click', function () {elementToggleFunc(this); });
+
+for(let i = 0; i < selectItems.length; i++) {
+    selectItems[i].addEventListener('click', function() {
+
+        let selectedValue = this.innerText.toLowerCase();
+        selectValue.innerText = this.innerText;
+        elementToggleFunc(select);
+        filterFunc(selectedValue);
+
     });
-};
+}
 
-// Select Dropdown
-elements.select.addEventListener('click', () => toggleClass(elements.select));
+const filterItems = document.querySelectorAll('[data-filter-item]');
 
-elements.selectItems.forEach(item => {
-    item.addEventListener('click', () => {
-        const selectedValue = item.innerText.toLowerCase();
-        elements.selectValue.innerText = item.innerText;
-        toggleClass(elements.select);
-        filterItems(selectedValue);
-    });
-});
+const filterFunc = function (selectedValue) {
+    for(let i = 0; i < filterItems.length; i++) {
+        if(selectedValue == "all") {
+            filterItems[i].classList.add('active');
+        } else if (selectedValue == filterItems[i].dataset.category) {
+            filterItems[i].classList.add('active');
+        } else {
+            filterItems[i].classList.remove('active');
+        }
+    }
+}
 
-// Filter Buttons
-let lastClickedBtn = elements.filterBtns[0];
+//Enabling filter button for larger screens
 
-elements.filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        const selectedValue = btn.innerText.toLowerCase();
-        elements.selectValue.innerText = btn.innerText;
-        filterItems(selectedValue);
-        
-        removeClass(lastClickedBtn);
-        addClass(btn);
-        lastClickedBtn = btn;
-    });
-});
+let lastClickedBtn = filterBtn[0];
 
-// Contact Form Validation
-elements.formInputs.forEach(input => {
-    input.addEventListener('input', () => {
-        elements.formBtn.disabled = !elements.form.checkValidity();
-    });
-});
+for (let i = 0; i < filterBtn.length; i++) {
 
-// Navigation
-elements.navLinks.forEach(navLink => {
-    navLink.addEventListener('click', () => {
-        const targetPage = navLink.dataset.navLink;
-        
-        // Reset all pages and nav links
-        elements.pages.forEach(page => removeClass(page));
-        elements.navLinks.forEach(link => removeClass(link));
-        
-        // Activate target page and nav link
+    filterBtn[i].addEventListener('click', function() {
+
+        let selectedValue = this.innerText.toLowerCase();
+        selectValue.innerText = this.innerText;
+        filterFunc(selectedValue);
+
+        lastClickedBtn.classList.remove('active');
+        this.classList.add('active');
+        lastClickedBtn = this;
+
+    })
+}
+
+// Enabling Contact Form
+
+const form = document.querySelector('[data-form]');
+const formInputs = document.querySelectorAll('[data-form-input]');
+const formBtn = document.querySelector('[data-form-btn]');
+
+for(let i = 0; i < formInputs.length; i++) {
+    formInputs[i].addEventListener('input', function () {
+        if(form.checkValidity()) {
+            formBtn.removeAttribute('disabled');
+        } else {
+            formBtn.setAttribute('disabled', '');
+        }
+    })
+}
+
+const navigationLinks = document.querySelectorAll('[data-nav-link]');
+const pages = document.querySelectorAll('[data-page]');
+
+navigationLinks.forEach(navLink => {
+    navLink.addEventListener('click', function() {
+        const targetPage = this.dataset.navLink; // Get target page name
+
+        console.log(`Clicked on: ${targetPage}`); // Debugging
+
+        // Remove 'active' from all pages and nav links
+        pages.forEach(page => page.classList.remove('active'));
+        navigationLinks.forEach(link => link.classList.remove('active'));
+
+        // Add 'active' to the clicked nav link and target page
         const targetElement = document.querySelector(`[data-page="${targetPage}"]`);
         if (targetElement) {
-            addClass(targetElement);
-            addClass(navLink);
+            targetElement.classList.add('active');
+            console.log(`Activated page: ${targetPage}`);
         } else {
-            console.error(`Page not found: ${targetPage}`);
+            console.error(`No matching page found for: ${targetPage}`);
         }
-        
-        scrollToTop();
+
+        this.classList.add('active'); // Highlight the active nav link
+
+        // Scroll to top when navigating
+        window.scrollTo(0, 0);
     });
 });
+
+//const navigationLinks = document.querySelectorAll('[data-nav-link]');
+//const pages = document.querySelectorAll('[data-page]');
+
+//for(let i = 0; i < navigationLinks.length; i++) {
+    //navigationLinks[i].addEventListener('click', function() {
+
+        //for(let i = 0; i < pages.length; i++) {
+            //if(this.innerHTML.toLowerCase() == pages[i].dataset.page) {
+                //pages[i].classList.add('active');
+                //navigationLinks[i].classList.add('active');
+                //window.scrollTo(0, 0);
+            //} else {
+                //pages[i].classList.remove('active');
+                //navigationLinks[i]. classList.remove('active');
+            //}
+        //}

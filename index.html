@@ -3,61 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio website of Makenzie Buchenroth - Software Developer specializing in Game Development">
-    <meta name="keywords" content="software developer, game developer, portfolio, Unity, C#, game design">
-    <title>Makenzie Buchenroth - Software Developer Portfolio</title>
-    
-    <!-- Stylesheets -->
+    <title>Makenzie Buchenroth - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="https://i.postimg.cc/L8dP83P1/logo-favicon-transparent.png" type="image/x-icon">
-    
-    <!-- Preload critical assets -->
-    <link rel="preload" href="https://i.postimg.cc/g0L3DcZf/me.jpg" as="image">
 </head>
 <body>
     <main>
-        <!-- Sidebar Navigation -->
-        <aside class="sidebar" data-sidebar aria-label="Contact Information">
+        <aside class="sidebar " data-sidebar>
             <div class="sidebar-info">
                 <figure class="avatar-box">
-                    <img src="https://i.postimg.cc/g0L3DcZf/me.jpg" alt="Makenzie Buchenroth's profile picture" width="80" height="80">
+                    <img src="https://i.postimg.cc/g0L3DcZf/me.jpg" alt="avatar" width="80">
                 </figure>
 
                 <div class="info-content">
-                    <h1 class="name" title="Makenzie Buchenroth">Makenzie Buchenroth</h1>
+                    <h2 class="name" title="Makenzie Buchenroth">Makenzie Buchenroth</h2>
                     <p class="title">Software Developer</p>
                 </div>
 
-                <button class="info-more-btn" data-sidebar-btn aria-expanded="false">
+                <button class="info-more-btn" data-sidebar-btn>
                     <span>Show Contacts</span>
-                    <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
+                    <ion-icon name="chevron-down"></ion-icon>
                 </button>
             </div>
 
-            <div class="sidebar-info-more" hidden>
+            <div class="sidebar-info-more">
                 <div class="separator"></div>
 
                 <ul class="contacts-list">
                     <li class="contact-item">
-                        <div class="icon-box" aria-hidden="true">
+                        <div class="icon-box">
                             <ion-icon name="mail-outline"></ion-icon>
                         </div>
 
                         <div class="contact-info">
                             <p class="contact-title">Email</p>
-                            <a href="mailto:kenziebuchenroth.professional@gmail.com" class="contact-link" aria-label="Send email to kenziebuchenroth.professional@gmail.com">
-                                kenziebuchenroth.professional@gmail.com
-                            </a>
+
+                            <a href="mailto:kenziebuchenroth.professional@gmail.com" class="contact-link">kenziebuchenroth.professional@gmail.com</a>
                         </div>
                     </li>
 
                     <li class="contact-item">
-                        <div class="icon-box" aria-hidden="true">
+                        <div class="icon-box">
                             <ion-icon name="location-outline"></ion-icon>
                         </div>
 
                         <div class="contact-info">
                             <p class="contact-title">Location</p>
+
                             <address>Salt Lake City, Utah, United States</address>
                         </div>
                     </li>
@@ -65,124 +57,111 @@
 
                 <div class="separator"></div>
 
-                <ul class="social-list" aria-label="Social Media Links">
-                    <li class="social-item">
-                        <a href="https://github.com/MakenzieBuchenroth-Neumont" class="social-link" aria-label="Visit GitHub Profile">
-                            <ion-icon name="logo-github" aria-hidden="true"></ion-icon>
-                        </a>
-                    </li>
-                    <li class="social-item">
-                        <a href="https://www.linkedin.com/in/makenzie-buchenroth/" class="social-link" aria-label="Visit LinkedIn Profile">
-                            <ion-icon name="logo-linkedin" aria-hidden="true"></ion-icon>
-                        </a>
-                    </li>
+                <ul class="social-list">
+                    <li class="social-item"><a href="https://github.com/MakenzieBuchenroth-Neumont" class="social-link"><ion-icon name="logo-github"></ion-icon></a></li>
+                    <li class="social-item"><a href="https://www.linkedin.com/in/makenzie-buchenroth/" class="social-link"><ion-icon name="logo-linkedin"></ion-icon></a></li>
                 </ul>
-
-                <footer class="credits">
-                    <p class="contact-title">Credit to
-                        <a href="https://codewithsadee.github.io/vcard-personal-portfolio/" rel="noopener noreferrer">Richard Hanrick</a> and
-                        <a href="https://codepen.io/leonam-silva-de-souza/pen/vYowKqP" rel="noopener noreferrer">Leonam Silva de Souza</a> for the website code.
-                    </p>
-                </footer>
+                <p class="contact-title">Credit to
+                  <a href="https://codewithsadee.github.io/vcard-personal-portfolio/">Richard Hanrick</a> and
+                  <a href="https://codepen.io/leonam-silva-de-souza/pen/vYowKqP">Leonam Silva de Souza</a> for the website code.
+              </p>
             </div>
         </aside>
 
-        <!-- Main Content -->
         <div class="main-content">
-            <nav class="navbar" aria-label="Main Navigation">
-                <ul class="navbar-list">
-                    <li class="navbar-item"><button class="navbar-link active" data-nav-link="about" aria-current="page">About</button></li>
-                    <li class="navbar-item"><button class="navbar-link" data-nav-link="resume">Resume</button></li>
-                    <li class="navbar-item"><button class="navbar-link" data-nav-link="portfolio">Portfolio</button></li>
-                    <li class="navbar-item"><button class="navbar-link" data-nav-link="contact">Contact</button></li>
-                </ul>
-            </nav>
+          <nav class="navbar">
+            <ul class="navbar-list">
+                <li class="navbar-item"><button class="navbar-link active" data-nav-link="about">About</button></li>
+                <li class="navbar-item"><button class="navbar-link" data-nav-link="resume">Resume</button></li>
+                <li class="navbar-item"><button class="navbar-link" data-nav-link="portfolio">Portfolio</button></li>
+                <li class="navbar-item"><button class="navbar-link" data-nav-link="contact">Contact</button></li>
+            </ul>
+          </nav>
 
-            <!-- About Section -->
-            <article class="about active" data-page="about" aria-labelledby="about-title">
+            <article class="about active" data-page="about">
                 <header>
-                    <h2 id="about-title" class="h2 article-title">About me</h2>
+                    <h3 class="h2 article-title">About me</h2>
                 </header>
 
                 <section class="about-text">
                     <p>I started at Neumont College of Computer Science in 2022. In my first year, I was introduced to the basics of computer science, learning Java. After I chose my major, Game and Software Development, I learned C++, C# and Unity. I created my own game engine from scratch in C++ in one of my classes, and have participated in three game jams thus far. I have completed multiple games by myself, including my Capstone project, Obsession.</p>
                     <p>I am set to graduate in September of 2025, and upon graduation will have ~10 weeks of indie development, and ~30 weeks of company development, thanks to my enterprise projects.</p>
                 </section>
+
             </article>
 
-            <!-- Resume Section -->
-            <article class="resume" data-page="resume" aria-labelledby="resume-title">
-                <header>
-                    <h2 id="resume-title" class="h2 article-title">Resume</h2>
+            <article class="resume" data-page="resume">
+              <header>
+                    <h2 class="h2 article-title">Resume</h2>
                 </header>
 
-                <section class="timeline" aria-labelledby="education-title">
+                <section class="timeline">
                     <div class="title-wrapper">
-                        <div class="icon-box" aria-hidden="true"><ion-icon name="book-outline"></ion-icon></div>
-                        <h3 id="education-title" class="h3">Education</h3>
+                        <div class="icon-box"><ion-icon name="book-outline"></ion-icon></div>
+
+                        <h3 class="h3">Education</h3>
                     </div>
 
                     <ol class="timeline-list">
                         <li class="timeline-item">
                             <h4 class="h4 timeline-item-title">Bachelor's of Science in Game and Software Development - Neumont College of Computer Science</h4>
-                            <time datetime="2022/2025">2022-2025</time>
-                            <ul class="timeline-achievements">
-                                <li>Awarded the Achievement Scholarship</li>
-                                <li>Dean's List, Spring Quarter 2024</li>
-                            </ul>
+                            <span>2022-2025</span>
+                            <p class="timeline-text">Awarded the Acheivement Scholarship</p>
+                            <p class="timeline-text">Dean’s List, Spring Quarter 2024</p>
                         </li>
                     </ol>
                 </section>
 
-                <section class="timeline" aria-labelledby="experience-title">
+                <section class="timeline">
                     <div class="title-wrapper">
-                        <div class="icon-box" aria-hidden="true"><ion-icon name="book-outline"></ion-icon></div>
-                        <h3 id="experience-title" class="h3">Experience</h3>
+                        <div class="icon-box"><ion-icon name="book-outline"></ion-icon></div>
+
+                        <h3 class="h3">Experience</h3>
                     </div>
 
                     <ol class="timeline-list">
                         <li class="timeline-item">
                             <h4 class="h4 timeline-item-title">Game Level Design, Dreamscapes | Salt Lake City, UT</h4>
-                            <time datetime="2025-01/2025-03">Jan - Mar. 2025</time>
-                            <p class="timeline-text">Created a 2D touchscreen-compatible game to be displayed on a kiosk in the building.</p>
+                            <span>Jan - Mar. 2025</span>
+                            <p class="timeline-text">Created a 2D touchscreen-compatible game to be displayed on a kiosk in the building.
                             <p class="timeline-text">Technologies used: Unity | C# | Visual Studio</p>
                         </li>
 
                         <li class="timeline-item">
                             <h4 class="h4 timeline-item-title">Game Developer & Designer, Obsession</h4>
-                            <time datetime="2024-09/2024-12">Sept. - Dec. 2024</time>
-                            <p class="timeline-text">Created A 3D game where players assume control of a teenage boy as he disposes of anyone that gets close to his crush. Utilizing stealth and strategies, players can get rid of "rivals".</p>
+                            <span>Sept. - Dec. 2024</span>
+                            <p class="timeline-text">Created A 3D game where players assume control of a teenage boy as he disposes of anyone that gets close to his crush. Utilizing stealth and strategies, players can get rid of “rivals”.
                             <p class="timeline-text">Technologies used: Unity | C# | Visual Studio | AI | Photoshop (for asset design)</p>
                         </li>
 
                         <li class="timeline-item">
                             <h4 class="h4 timeline-item-title">Level Designer, Desert Dash</h4>
-                            <time datetime="2024-04">April 2024</time>
+                            <span>April 2024</span>
                             <p class="timeline-text">Created a level for a 3D game where multiple players race to the finish to avoid the desert tornado chasing them</p>
                             <p class="timeline-text">Technologies used: Unity | C# | Alteruna Multiplayer SDK | Visual Studio</p>
-                            <p class="timeline-text">Created for a collaborative game development event in 48 hours</p>
+                            <p class="timeline-text">Created for a colaborative game development event in 48 hours</p>
                         </li>
 
                         <li class="timeline-item">
                             <h4 class="h4 timeline-item-title">Gameplay Programmer, Packing</h4>
-                            <time datetime="2024-02">Feb. 2024</time>
+                            <span>Feb. 2024</span>
                             <p class="timeline-text">Coded a pixel-art game where players need to fit as many boxes in a van as possible before time runs out.</p>
                             <p class="timeline-text">Technologies used: Unity | C# | Visual Studio</p>
-                            <p class="timeline-text">Created for a collaborative game development event in 48 hours</p>
+                            <p class="timeline-text">Created for a colaborative game development event in 48 hours</p>
                         </li>
 
                         <li class="timeline-item">
                             <h4 class="h4 timeline-item-title">Writer & Developer, Court of Shadows</h4>
-                            <time datetime="2023-08">Aug. 2023</time>
+                            <span>Aug. 2023</span>
                             <p class="timeline-text">Wrote the script and some of the coding for a 2d, anime-styled visual novel where players take control of an advisor to the king and must balance different meters to keep different sides satisfied.</p>
-                            <p class="timeline-text">Technologies used: Ren'Py | Python</p>
-                            <p class="timeline-text">Created for a collaborative game development event in 72 hours</p>
+                            <p class="timeline-text">Technologies used: Ren’Py | Python</p>
+                            <p class="timeline-text">Created for a colaborative game development event in 72 hours</p>
                         </li>
                     </ol>
                 </section>
 
-                <section class="skill" aria-labelledby="skills-title">
-                    <h3 id="skills-title" class="h3 skills-title">My Skills</h3>
+                <section class="skill">
+                    <h3 class="h3 skills-title">My Skills</h3>
 
                     <ul class="skills-list content-card">
                         <li class="skills-item">
@@ -190,7 +169,8 @@
                                 <h5 class="h5">Adobe Software Suite</h5>
                                 <data value="90">90%</data>
                             </div>
-                            <div class="skills-progress-bg" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+
+                            <div class="skills-progress-bg">
                                 <div class="skills-progress-fill" style="width: 90%;"></div>
                             </div>
                         </li>
@@ -200,7 +180,8 @@
                                 <h5 class="h5">Level Design</h5>
                                 <data value="90">90%</data>
                             </div>
-                            <div class="skills-progress-bg" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+
+                            <div class="skills-progress-bg">
                                 <div class="skills-progress-fill" style="width: 90%;"></div>
                             </div>
                         </li>
@@ -210,7 +191,8 @@
                                 <h5 class="h5">C#</h5>
                                 <data value="60">60%</data>
                             </div>
-                            <div class="skills-progress-bg" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+
+                            <div class="skills-progress-bg">
                                 <div class="skills-progress-fill" style="width: 60%;"></div>
                             </div>
                         </li>
@@ -220,7 +202,8 @@
                                 <h5 class="h5">Unity</h5>
                                 <data value="60">60%</data>
                             </div>
-                            <div class="skills-progress-bg" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+
+                            <div class="skills-progress-bg">
                                 <div class="skills-progress-fill" style="width: 60%;"></div>
                             </div>
                         </li>
@@ -230,7 +213,8 @@
                                 <h5 class="h5">GitHub</h5>
                                 <data value="60">60%</data>
                             </div>
-                            <div class="skills-progress-bg" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+
+                            <div class="skills-progress-bg">
                                 <div class="skills-progress-fill" style="width: 60%;"></div>
                             </div>
                         </li>
@@ -240,7 +224,8 @@
                                 <h5 class="h5">C++</h5>
                                 <data value="30">30%</data>
                             </div>
-                            <div class="skills-progress-bg" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+
+                            <div class="skills-progress-bg">
                                 <div class="skills-progress-fill" style="width: 30%;"></div>
                             </div>
                         </li>
@@ -250,7 +235,8 @@
                                 <h5 class="h5">Unreal</h5>
                                 <data value="30">30%</data>
                             </div>
-                            <div class="skills-progress-bg" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+
+                            <div class="skills-progress-bg">
                                 <div class="skills-progress-fill" style="width: 30%;"></div>
                             </div>
                         </li>
@@ -260,7 +246,8 @@
                                 <h5 class="h5">Blender</h5>
                                 <data value="30">30%</data>
                             </div>
-                            <div class="skills-progress-bg" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+
+                            <div class="skills-progress-bg">
                                 <div class="skills-progress-fill" style="width: 30%;"></div>
                             </div>
                         </li>
@@ -268,45 +255,45 @@
                 </section>
             </article>
 
-            <!-- Portfolio Section -->
-            <article class="portfolio" data-page="portfolio" aria-labelledby="portfolio-title">
-                <header>
-                    <h2 id="portfolio-title" class="h2 article-title">Portfolio</h2>
+            <article class="portfolio" data-page="portfolio">
+              <header>
+                    <h2 class="h2 article-title">Portfolio</h2>
                 </header>
 
-                <section class="projects" aria-labelledby="filter-title">
-                    <h3 id="filter-title" class="visually-hidden">Project Filters</h3>
-                    
-                    <ul class="filter-list" role="tablist">
-                        <li class="filter-item"><button class="active" data-filter-btn role="tab" aria-selected="true">All</button></li>
-                        <li class="filter-item"><button data-filter-btn role="tab" aria-selected="false">Level Design</button></li>
-                        <li class="filter-item"><button data-filter-btn role="tab" aria-selected="false">Developer</button></li>
+                <section class="projects">
+                    <ul class="filter-list">
+                        <li class="filter-item"><button class="active" data-filter-btn>All</button></li>
+                        <li class="filter-item"><button data-filter-btn>Level Design</button></li>
+                        <li class="filter-item"><button data-filter-btn>Developer</button></li>
                     </ul>
 
                     <div class="filter-select-box">
-                        <button class="filter-select" data-select aria-expanded="false">
+                        <button class="filter-select " data-select>
                             <div class="select-value" data-select-value>Select Category</div>
-                            <div class="select-icon" aria-hidden="true">
+
+                            <div class="select-icon">
                                 <ion-icon name="chevron-down"></ion-icon>
                             </div>
                         </button>
 
-                        <ul class="select-list" role="listbox">
-                            <li class="select-item"><button data-select-item role="option">All</button></li>
-                            <li class="select-item"><button data-select-item role="option">Level Design</button></li>
-                            <li class="select-item"><button data-select-item role="option">Developer</button></li>
+                        <ul class="select-list">
+                            <li class="select-item"><button data-select-item>All</button></li>
+                            <li class="select-item"><button data-select-item>Level Design</button></li>
+                            <li class="select-item"><button data-select-item>Developer</button></li>
                         </ul>
                     </div>
 
-                    <ul class="project-list" role="tabpanel">
+                    <ul class="project-list">
                         <li class="project-item active" data-filter-item data-category="level design">
                             <a href="DreamWare.html">
                                 <figure class="project-img">
-                                    <div class="project-item-icon-box" aria-hidden="true">
+                                    <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
-                                    <img src="https://i.postimg.cc/257KCxHk/Dream-Ware.jpg" alt="DreamWare Kiosk Game Screenshot" loading="lazy" width="800" height="600">
+
+                                    <img src="https://i.postimg.cc/257KCxHk/Dream-Ware.jpg" alt="DreamWare Kiosk" loading="lazy">
                                 </figure>
+
                                 <h3 class="project-title">DreamWare</h3>
                                 <p class="project-category">Level Design</p>
                             </a>
@@ -315,11 +302,13 @@
                         <li class="project-item active" data-filter-item data-category="developer">
                             <a href="#">
                                 <figure class="project-img">
-                                    <div class="project-item-icon-box" aria-hidden="true">
+                                    <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
-                                    <img src="https://i.postimg.cc/D0HCxpzg/XUAyXW.png" alt="Obsession Game Screenshot" loading="lazy" width="800" height="600">
+
+                                    <img src="https://i.postimg.cc/D0HCxpzg/XUAyXW.png" alt="Obsession" loading="lazy">
                                 </figure>
+
                                 <h3 class="project-title">Obsession</h3>
                                 <p class="project-category">Developer</p>
                             </a>
@@ -328,11 +317,13 @@
                         <li class="project-item active" data-filter-item data-category="level design">
                             <a href="#">
                                 <figure class="project-img">
-                                    <div class="project-item-icon-box" aria-hidden="true">
+                                    <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
-                                    <img src="https://i.postimg.cc/fWGpjk0h/DD.png" alt="Desert Dash Game Screenshot" loading="lazy" width="800" height="600">
+
+                                    <img src="https://i.postimg.cc/fWGpjk0h/DD.png" alt="Desert Dash" loading="lazy">
                                 </figure>
+
                                 <h3 class="project-title">Desert Dash</h3>
                                 <p class="project-category">Level Design</p>
                             </a>
@@ -341,11 +332,13 @@
                         <li class="project-item active" data-filter-item data-category="developer">
                             <a href="#">
                                 <figure class="project-img">
-                                    <div class="project-item-icon-box" aria-hidden="true">
+                                    <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
-                                    <img src="https://i.postimg.cc/HkHNRK2Z/Packing.png" alt="Packing Game Screenshot" loading="lazy" width="800" height="600">
+
+                                    <img src="https://i.postimg.cc/HkHNRK2Z/Packing.png" alt="Packing" loading="lazy">
                                 </figure>
+
                                 <h3 class="project-title">Packing</h3>
                                 <p class="project-category">Developer</p>
                             </a>
@@ -354,38 +347,40 @@
                         <li class="project-item active" data-filter-item data-category="developer">
                             <a href="#">
                                 <figure class="project-img">
-                                    <div class="project-item-icon-box" aria-hidden="true">
+                                    <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
-                                    <img src="https://i.postimg.cc/Vvn7HBbP/COS.png" alt="Court of Shadows Game Screenshot" loading="lazy" width="800" height="600">
+
+                                    <img src="https://i.postimg.cc/Vvn7HBbP/COS.png" alt="Court of Shadows" loading="lazy">
                                 </figure>
+
                                 <h3 class="project-title">Court of Shadows</h3>
                                 <p class="project-category">Developer</p>
                             </a>
                         </li>
+
                     </ul>
                 </section>
             </article>
 
-            <!-- Contact Section -->
-            <article class="contact" data-page="contact" aria-labelledby="contact-title">
-                <header>
-                    <h2 id="contact-title" class="h2 article-title">Contact</h2>
+            <article class="contact" data-page="contact">
+              <header>
+                    <h2 class="h2 article-title">Contact</h2>
                 </header>
 
-                <section class="contact-form" aria-labelledby="form-title">
-                    <h3 id="form-title" class="h3 form-title">Contact Form</h3>
+                <section class="contact-form">
+                    <h3 class="h3 form-title">Contact Form</h3>
 
-                    <form action="#" class="form" data-form method="POST">
+                    <form action="#" class="form" data-form>
                         <div class="input-wrapper">
-                            <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input aria-label="Your full name">
-                            <input type="email" name="email" class="form-input" placeholder="Email Address" required data-form-input aria-label="Your email address">
+                            <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+                            <input type="email" name="email" class="form-input" placeholder="Email Address" required data-form-input>
                         </div>
 
-                        <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input aria-label="Your message"></textarea>
+                        <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input=""></textarea>
 
                         <button class="form-btn" type="submit" disabled data-form-btn>
-                            <ion-icon name="paper-plane" aria-hidden="true"></ion-icon>
+                            <ion-icon name="paper-plane"></ion-icon>
                             <span>Send Message</span>
                         </button>
                     </form>
@@ -394,9 +389,10 @@
         </div>
     </main>
 
-    <!-- Scripts -->
-    <script src="main.js" defer></script>
+    <script src="main.js"></script>
+
     <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 </body>
 </html>
