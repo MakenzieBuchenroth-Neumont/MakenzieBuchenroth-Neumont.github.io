@@ -3,53 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Makenzie Buchenroth - DreamWare</title>
+    <meta name="description" content="DreamWare - A touchscreen game developed for Dreamscapes kiosk by Makenzie Buchenroth">
+    <meta name="keywords" content="DreamWare, game development, kiosk game, touchscreen, Unity, game design">
+    <title>DreamWare - Game Development Project | Makenzie Buchenroth</title>
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="https://i.postimg.cc/L8dP83P1/logo-favicon-transparent.png" type="image/x-icon">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="https://i.postimg.cc/g0L3DcZf/me.jpg" as="image">
 </head>
 <body>
     <main>
-        <aside class="sidebar " data-sidebar>
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" data-sidebar aria-label="Contact Information">
             <div class="sidebar-info">
                 <figure class="avatar-box">
-                    <img src="https://i.postimg.cc/g0L3DcZf/me.jpg" alt="avatar" width="80">
+                    <img src="https://i.postimg.cc/g0L3DcZf/me.jpg" alt="Makenzie Buchenroth's profile picture" width="80" height="80">
                 </figure>
 
                 <div class="info-content">
-                    <h2 class="name" title="Makenzie Buchenroth">Makenzie Buchenroth</h2>
+                    <h1 class="name" title="Makenzie Buchenroth">Makenzie Buchenroth</h1>
                     <p class="title">Software Developer</p>
                 </div>
 
-                <button class="info-more-btn" data-sidebar-btn>
+                <button class="info-more-btn" data-sidebar-btn aria-expanded="false">
                     <span>Show Contacts</span>
-                    <ion-icon name="chevron-down"></ion-icon>
+                    <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
                 </button>
             </div>
 
-            <div class="sidebar-info-more">
+            <div class="sidebar-info-more" hidden>
                 <div class="separator"></div>
 
                 <ul class="contacts-list">
                     <li class="contact-item">
-                        <div class="icon-box">
+                        <div class="icon-box" aria-hidden="true">
                             <ion-icon name="mail-outline"></ion-icon>
                         </div>
 
                         <div class="contact-info">
                             <p class="contact-title">Email</p>
-
-                            <a href="mailto:kenziebuchenroth.professional@gmail.com" class="contact-link">kenziebuchenroth.professional@gmail.com</a>
+                            <a href="mailto:kenziebuchenroth.professional@gmail.com" class="contact-link" aria-label="Send email to kenziebuchenroth.professional@gmail.com">
+                                kenziebuchenroth.professional@gmail.com
+                            </a>
                         </div>
                     </li>
 
                     <li class="contact-item">
-                        <div class="icon-box">
+                        <div class="icon-box" aria-hidden="true">
                             <ion-icon name="location-outline"></ion-icon>
                         </div>
 
                         <div class="contact-info">
                             <p class="contact-title">Location</p>
-
                             <address>Salt Lake City, Utah, United States</address>
                         </div>
                     </li>
@@ -57,37 +65,84 @@
 
                 <div class="separator"></div>
 
-                <ul class="social-list">
-                    <li class="social-item"><a href="https://github.com/MakenzieBuchenroth-Neumont" class="social-link"><ion-icon name="logo-github"></ion-icon></a></li>
-                    <li class="social-item"><a href="https://www.linkedin.com/in/makenzie-buchenroth/" class="social-link"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+                <ul class="social-list" aria-label="Social Media Links">
+                    <li class="social-item">
+                        <a href="https://github.com/MakenzieBuchenroth-Neumont" class="social-link" aria-label="Visit GitHub Profile">
+                            <ion-icon name="logo-github" aria-hidden="true"></ion-icon>
+                        </a>
+                    </li>
+                    <li class="social-item">
+                        <a href="https://www.linkedin.com/in/makenzie-buchenroth/" class="social-link" aria-label="Visit LinkedIn Profile">
+                            <ion-icon name="logo-linkedin" aria-hidden="true"></ion-icon>
+                        </a>
+                    </li>
                 </ul>
-                <p class="contact-title">Credit to
-                  <a href="https://codewithsadee.github.io/vcard-personal-portfolio/">Richard Hanrick</a> and
-                  <a href="https://codepen.io/leonam-silva-de-souza/pen/vYowKqP">Leonam Silva de Souza</a> for the website code.
-              </p>
+
+                <footer class="credits">
+                    <p class="contact-title">Credit to
+                        <a href="https://codewithsadee.github.io/vcard-personal-portfolio/" rel="noopener noreferrer">Richard Hanrick</a> and
+                        <a href="https://codepen.io/leonam-silva-de-souza/pen/vYowKqP" rel="noopener noreferrer">Leonam Silva de Souza</a> for the website code.
+                    </p>
+                </footer>
             </div>
         </aside>
 
+        <!-- Main Content -->
         <div class="main-content">
+            <nav class="navbar" aria-label="Main Navigation">
+                <ul class="navbar-list">
+                    <li class="navbar-item">
+                        <a href="index.html" class="navbar-link" aria-label="Return to portfolio">← Back to Portfolio</a>
+                    </li>
+                </ul>
+            </nav>
 
-            <article class="about active" data-page="about">
+            <!-- Project Details -->
+            <article class="about active" data-page="about" aria-labelledby="project-title">
                 <header>
-                    <h3 class="h2 article-title">DreamWare</h2>
+                    <h2 id="project-title" class="h2 article-title">DreamWare</h2>
                 </header>
 
                 <section class="about-text">
-                    <p>Created in ten weeks by a team of five, DreamWare in a touchscreen game in a kiosk on display at Dreamscapes in Salt Lake City Utah.</p>
-                    <p>I worked on UI and design. I designed the loading screen and the minigame select. I made basic scripts to add movement to the screen.</p>
-                </section>
+                    <div class="project-overview">
+                        <h3 class="h3">Project Overview</h3>
+                        <p>Created in ten weeks by a team of five, DreamWare is a touchscreen game in a kiosk on display at Dreamscapes in Salt Lake City, Utah.</p>
+                    </div>
 
+                    <div class="project-role">
+                        <h3 class="h3">My Role</h3>
+                        <p>I worked on UI and design, specifically:</p>
+                        <ul>
+                            <li>Designed the loading screen</li>
+                            <li>Created the minigame selection interface</li>
+                            <li>Developed basic scripts for screen movement</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-details">
+                        <h3 class="h3">Project Details</h3>
+                        <dl>
+                            <dt>Duration</dt>
+                            <dd>10 weeks</dd>
+                            
+                            <dt>Team Size</dt>
+                            <dd>5 members</dd>
+                            
+                            <dt>Location</dt>
+                            <dd>Dreamscapes, Salt Lake City, Utah</dd>
+                            
+                            <dt>Platform</dt>
+                            <dd>Touchscreen Kiosk</dd>
+                        </dl>
+                    </div>
+                </section>
             </article>
         </div>
     </main>
 
-    <script src="main.js"></script>
-
+    <!-- Scripts -->
+    <script src="main.js" defer></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
 </body>
 </html>
