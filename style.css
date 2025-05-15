@@ -83,11 +83,14 @@ input, textarea {
 
 html { font-family: var(--ff-poppins); }
 
-body { background: var(--smoky-black); }
+body {
+    background: var(--smoky-black);
+    margin: 0;
+}
+
 
 main {
-    margin: 15px 12px;
-    margin-bottom: 75px;
+    margin: 0 12px 75px 12px;
     min-width: 259px;
 }
 
@@ -216,6 +219,7 @@ article { display: none; }
 /*ASIDE - SIDEBAR*/
 
 .sidebar {
+    margin-top: 0;
     margin-bottom: 15px;
     max-height: 112px;
     overflow: hidden;
@@ -231,8 +235,6 @@ article { display: none; }
     gap: 15px;
 }
 
-
-
 .avatar-box {
     background: var(--bg-gradient-onyx);
     border-radius: 20px;
@@ -240,10 +242,12 @@ article { display: none; }
 
 .info-content .name {
     color: var(--white2);
-    font-size: var(--fs3);
+    font-size: 20px;
     font-weight: var(--fw500);
     letter-spacing: -0.25px;
     margin-bottom: 10px;
+    padding: 0 12px;
+    text-align: center;
 }
 
 .info-content .title {
@@ -1050,6 +1054,26 @@ textarea.form-input {
         .form-btn:disabled:hover { background: var(--border-gradient-onyx); }
             .form-btn:disabled:hover::before { background: var(--bg-gradient-jet); }
 
+.credit {
+  font-size: 12px;
+  color: var(--light-gray70);
+  text-align: center;
+  margin-top: 18px;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.credit a {
+  color: var(--orange-yellow-crayola);
+  text-decoration: underline;
+  font-style: normal;
+  font-weight: var(--fw500);
+  transition: opacity 0.2s;
+}
+
+.credit a:hover {
+  opacity: 0.8;
+}
 
 /*MEDIA QUERIES*/
 
@@ -1081,10 +1105,10 @@ textarea.form-input {
         padding-bottom: 15px;
     }
 
-        .article-title::after {
-            width: 40px;
-            height: 5px;
-        }
+    .article-title::after {
+        width: 40px;
+        height: 5px;
+    }
 
     .icon-box {
         width: 48px;
@@ -1094,7 +1118,7 @@ textarea.form-input {
     }
 
     main {
-        margin-top: 60px;
+        margin-top: 0;
         margin-bottom: 100px;
     }
 
@@ -1461,4 +1485,8 @@ textarea.form-input {
     .social-list { justify-content: center; }
 
     .timeline-text { max-width: 700px; }
+}
+
+.main-content {
+    margin-top: 0;
 }
