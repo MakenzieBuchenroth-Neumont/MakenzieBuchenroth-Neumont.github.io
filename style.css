@@ -1490,8 +1490,3 @@ textarea.form-input {
 .main-content {
     margin-top: 0;
 }
-
-.rounded-avatar {
-    border-radius: 50%;
-    object-fit: cover;
-}
