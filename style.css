@@ -406,6 +406,7 @@ article { display: none; }
 
 .about-text a {
     color: var(--orange-yellow-crayola);
+    display: inline;
 }
 
 .about-text a:visited {
