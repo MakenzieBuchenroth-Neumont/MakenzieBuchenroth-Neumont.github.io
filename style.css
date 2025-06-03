@@ -328,6 +328,10 @@ article { display: none; }
         font-size: var(--fs7);
     }
 
+    .contact-info :is(.contact-link:visited) {
+        color: var(--white2);
+    }
+
     .contact-info address { font-style: normal; }
 
 .contact-title {
