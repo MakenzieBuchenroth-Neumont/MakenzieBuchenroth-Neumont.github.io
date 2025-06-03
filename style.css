@@ -1553,3 +1553,14 @@ textarea.form-input {
   .github-widget { padding: 12px 6px; }
   .github-readme { font-size: var(--fs8); }
 }
+
+.github-repo-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.github-logo {
+  display: inline-block;
+  vertical-align: middle;
+  color: var(--orange-yellow-crayola);
+}
