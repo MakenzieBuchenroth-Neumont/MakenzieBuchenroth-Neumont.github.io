@@ -160,17 +160,5 @@ document.addEventListener('DOMContentLoaded', function() {
         widget.querySelector('.github-repo-name').textContent = 'Could not load repo info.';
         widget.querySelector('.github-repo-desc').textContent = '';
       });
-
-    // Fetch README (as markdown)
-    fetch(readmeApiUrl, { headers: { Accept: 'application/vnd.github.v3.raw' } })
-      .then(res => res.ok ? res.text() : Promise.reject(res))
-      .then(readme => {
-        let preview = readme.slice(0, 5000); // show more for markdown context
-        if (readme.length > 5000) preview += '\n...';
-        widget.querySelector('.github-readme').innerHTML = window.marked.parse(preview);
-      })
-      .catch(() => {
-        widget.querySelector('.github-readme').textContent = 'Could not load README.';
-      });
   });
 });
