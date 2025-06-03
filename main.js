@@ -134,42 +134,43 @@ if (navigationLinks.length && pages.length) {
 
 // GitHub Repo Widget Logic
 document.addEventListener('DOMContentLoaded', function() {
-  const widget = document.getElementById('github-widget');
-  if (!widget) return;
+  const widgets = document.querySelectorAll('.github-widget');
+  widgets.forEach(widget => {
+    const repoOwner = widget.getAttribute('data-github-owner');
+    const repoName = widget.getAttribute('data-github-repo');
+    if (!repoOwner || !repoName) return;
+    const repoApiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}`;
+    const readmeApiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/readme`;
 
-  const repoOwner = 'MakenzieBuchenroth-Neumont';
-  const repoName = 'UniversalChatRoom';
-  const repoApiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}`;
-  const readmeApiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/readme`;
+    widget.querySelector('.github-repo-name').textContent = 'Loading repo...';
+    widget.querySelector('.github-repo-desc').textContent = '';
+    widget.querySelector('.github-readme').textContent = 'Loading README...';
 
-  widget.querySelector('.github-repo-name').textContent = 'Loading repo...';
-  widget.querySelector('.github-repo-desc').textContent = '';
-  widget.querySelector('.github-readme').textContent = 'Loading README...';
+    // Fetch repo info
+    fetch(repoApiUrl)
+      .then(res => res.ok ? res.json() : Promise.reject(res))
+      .then(repo => {
+        const nameDiv = widget.querySelector('.github-repo-name');
+        nameDiv.innerHTML = `<a href='${repo.html_url}' target='_blank' style='color:var(--orange-yellow-crayola);font-weight:600;text-decoration:underline;'>${repo.name}</a>`;
+        let desc = repo.description || '';
+        if (desc.length > 100) desc = desc.slice(0, 100) + '...';
+        widget.querySelector('.github-repo-desc').textContent = desc;
+      })
+      .catch(() => {
+        widget.querySelector('.github-repo-name').textContent = 'Could not load repo info.';
+        widget.querySelector('.github-repo-desc').textContent = '';
+      });
 
-  // Fetch repo info
-  fetch(repoApiUrl)
-    .then(res => res.ok ? res.json() : Promise.reject(res))
-    .then(repo => {
-      const nameDiv = widget.querySelector('.github-repo-name');
-      nameDiv.innerHTML = `<a href='${repo.html_url}' target='_blank' style='color:var(--orange-yellow-crayola);font-weight:600;text-decoration:underline;'>${repo.name}</a>`;
-      let desc = repo.description || '';
-      if (desc.length > 100) desc = desc.slice(0, 100) + '...';
-      widget.querySelector('.github-repo-desc').textContent = desc;
-    })
-    .catch(() => {
-      widget.querySelector('.github-repo-name').textContent = 'Could not load repo info.';
-      widget.querySelector('.github-repo-desc').textContent = '';
-    });
-
-  // Fetch README (as plain text)
-  fetch(readmeApiUrl, { headers: { Accept: 'application/vnd.github.v3.raw' } })
-    .then(res => res.ok ? res.text() : Promise.reject(res))
-    .then(readme => {
-      let preview = readme.slice(0, 500);
-      if (readme.length > 500) preview += '\n...';
-      widget.querySelector('.github-readme').textContent = preview;
-    })
-    .catch(() => {
-      widget.querySelector('.github-readme').textContent = 'Could not load README.';
-    });
+    // Fetch README (as markdown)
+    fetch(readmeApiUrl, { headers: { Accept: 'application/vnd.github.v3.raw' } })
+      .then(res => res.ok ? res.text() : Promise.reject(res))
+      .then(readme => {
+        let preview = readme.slice(0, 5000); // show more for markdown context
+        if (readme.length > 5000) preview += '\n...';
+        widget.querySelector('.github-readme').innerHTML = window.marked.parse(preview);
+      })
+      .catch(() => {
+        widget.querySelector('.github-readme').textContent = 'Could not load README.';
+      });
+  });
 });
