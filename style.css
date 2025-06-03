@@ -405,11 +405,11 @@ article { display: none; }
 }
 
 .about-text a {
-    color: var(--white2);
+    color: var(--light-gray70);
 }
 
 .about-text a:visited {
-    color: var(--white2);
+    color: var(--light-gray70);
 }
 
 .about-text p {
