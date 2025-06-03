@@ -140,11 +140,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const repoName = widget.getAttribute('data-github-repo');
     if (!repoOwner || !repoName) return;
     const repoApiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}`;
-    const readmeApiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/readme`;
 
     widget.querySelector('.github-repo-name').textContent = 'Loading repo...';
     widget.querySelector('.github-repo-desc').textContent = '';
-    widget.querySelector('.github-readme').textContent = 'Loading README...';
 
     // Fetch repo info
     fetch(repoApiUrl)
