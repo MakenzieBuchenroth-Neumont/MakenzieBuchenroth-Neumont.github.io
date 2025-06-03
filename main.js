@@ -125,7 +125,7 @@ navigationLinks.forEach(navLink => {
         //}
 
 // GitHub Repo Widget Logic
-(function() {
+document.addEventListener('DOMContentLoaded', function() {
   const widget = document.getElementById('github-widget');
   if (!widget) return;
 
@@ -134,27 +134,34 @@ navigationLinks.forEach(navLink => {
   const repoApiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}`;
   const readmeApiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/readme`;
 
+  widget.querySelector('.github-repo-name').textContent = 'Loading repo...';
+  widget.querySelector('.github-repo-desc').textContent = '';
+  widget.querySelector('.github-readme').textContent = 'Loading README...';
+
   // Fetch repo info
   fetch(repoApiUrl)
-    .then(res => res.json())
+    .then(res => res.ok ? res.json() : Promise.reject(res))
     .then(repo => {
-      // Repo name as link
       const nameDiv = widget.querySelector('.github-repo-name');
       nameDiv.innerHTML = `<a href='${repo.html_url}' target='_blank' style='color:var(--orange-yellow-crayola);font-weight:600;text-decoration:underline;'>${repo.name}</a>`;
-      // Truncated description
-      const descDiv = widget.querySelector('.github-repo-desc');
       let desc = repo.description || '';
       if (desc.length > 100) desc = desc.slice(0, 100) + '...';
-      descDiv.textContent = desc;
+      widget.querySelector('.github-repo-desc').textContent = desc;
+    })
+    .catch(() => {
+      widget.querySelector('.github-repo-name').textContent = 'Could not load repo info.';
+      widget.querySelector('.github-repo-desc').textContent = '';
     });
 
   // Fetch README (as plain text)
   fetch(readmeApiUrl, { headers: { Accept: 'application/vnd.github.v3.raw' } })
-    .then(res => res.text())
+    .then(res => res.ok ? res.text() : Promise.reject(res))
     .then(readme => {
-      const readmeDiv = widget.querySelector('.github-readme');
       let preview = readme.slice(0, 500);
       if (readme.length > 500) preview += '\n...';
-      readmeDiv.textContent = preview;
+      widget.querySelector('.github-readme').textContent = preview;
+    })
+    .catch(() => {
+      widget.querySelector('.github-readme').textContent = 'Could not load README.';
     });
-})();
+});
