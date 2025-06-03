@@ -76,18 +76,25 @@
                 </header>
 
                 <section class="about-text">
-                    <p>Created in collaboration with 4 other developers for a 10-week internship.</p>
-                    <h2><i>An interactive touchscreen kiosk game designed for Dreamscapes, featuring multiple minigames that engage visitors in a playful, immersive experience.</i></h2>
+                    <script>
+                        var myRepoWidget = new GithubRepoWidget('MakenzieBuchenroth-Neumont', 'UniversalChatRoom');
+                        myRepoWidget.addEvent('complete', function(response, widget){
+                        $('myElement').grab(widget);
+                        });
+                    </script>
 
-                    <h2>🎮 About the Game</h2>
-                    <p>DreamWare is a collection of touchscreen minigames created for display at Dreamscapes, an interactive art installation in Salt Lake City. Developed over ten weeks by a team of five, this project aims to enhance visitor engagement through intuitive, accessible gameplay experiences that complement the venue's artistic atmosphere.</p>
+                    <a href="https://universalchatroom-e2a6c6hqb8b8atbh.eastus-01.azurewebsites.net" target="_blank">See the Universal Chat Room here!</a>
+                    <p>Created in collaboration with 4 other developers for a 10-week class.</p>
+                    <h2><i>A web–based chat room (hosted on Azure) that automatically translates messages so that users can chat in their own language.</i></h2>
+
+                    <h2>🎮 About the Project</h2>
+                    <p>Universal Chat Room (UCR) is a web–based chat application that lets users chat in their own language. (Messages are automatically translated.) This project (see <a href="https://github.com/MakenzieBuchenroth-Neumont/UniversalChatRoom" target="_blank" rel="noopener noreferrer">GitHub repo</a>) was built using C#, HTML, JavaScript, and CSS.</p>
 
                     <h2>✨ Features</h2>
-                    <p>🔹 Touchscreen Interface: Intuitive controls designed for public kiosk use</p>
-                    <p>🔹 Multiple Minigames: A collection of engaging, short-form experiences</p>
-                    <p>🔹 Interactive Loading Screen: Dynamic animations that maintain user engagement</p>
-                    <p>🔹 Minigame Selection Menu: Easy navigation between different game modes</p>
-                    <p>🔹 Visitor-Friendly Design: Accessible gameplay suitable for all ages</p>
+                    <p>🔹 Multi–Language Chat: Chat in your own language (e.g. English, Spanish, French, German, etc.) – messages are automatically translated.</p>
+                    <p>🔹 Web–Based (Azure Hosted): Access the chat room via a web browser (hosted on Azure).</p>
+                    <p>🔹 Responsive UI (HTML/CSS): A responsive (and “dark”–mode–friendly) user interface built using HTML and CSS.</p>
+                    <p>🔹 Backend (C#): Robust backend (using C#) to manage chat sessions and translation.</p>
 
                     <h2>🧪 Tech Stack</h2>
                     <p>Engine: Unity (2D)</p>
