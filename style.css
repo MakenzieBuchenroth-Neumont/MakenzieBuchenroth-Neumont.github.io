@@ -404,12 +404,20 @@ article { display: none; }
     line-height: 1.6;
 }
 
-    .about-text p {
-        margin-bottom: 15px;
-        text-align: justify;
-        padding-left: 10px;
-        padding-right: 10px;
-     }
+.about-text a {
+    color: var(--white2);
+}
+
+.about-text a:visited {
+    color: var(--white2);
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    text-align: justify;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
 .service { margin-bottom: 35px; }
 
