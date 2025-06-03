@@ -405,11 +405,11 @@ article { display: none; }
 }
 
 .about-text a {
-    color: var(--light-gray70);
+    color: var(--orange-yellow-crayola);
 }
 
 .about-text a:visited {
-    color: var(--light-gray70);
+    color: var(--orange-yellow-crayola);
 }
 
 .about-text p {
