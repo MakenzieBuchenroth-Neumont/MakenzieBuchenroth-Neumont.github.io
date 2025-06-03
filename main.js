@@ -123,3 +123,38 @@ navigationLinks.forEach(navLink => {
                 //navigationLinks[i]. classList.remove('active');
             //}
         //}
+
+// GitHub Repo Widget Logic
+(function() {
+  const widget = document.getElementById('github-widget');
+  if (!widget) return;
+
+  const repoOwner = 'MakenzieBuchenroth-Neumont';
+  const repoName = 'UniversalChatRoom';
+  const repoApiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}`;
+  const readmeApiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/readme`;
+
+  // Fetch repo info
+  fetch(repoApiUrl)
+    .then(res => res.json())
+    .then(repo => {
+      // Repo name as link
+      const nameDiv = widget.querySelector('.github-repo-name');
+      nameDiv.innerHTML = `<a href='${repo.html_url}' target='_blank' style='color:var(--orange-yellow-crayola);font-weight:600;text-decoration:underline;'>${repo.name}</a>`;
+      // Truncated description
+      const descDiv = widget.querySelector('.github-repo-desc');
+      let desc = repo.description || '';
+      if (desc.length > 100) desc = desc.slice(0, 100) + '...';
+      descDiv.textContent = desc;
+    });
+
+  // Fetch README (as plain text)
+  fetch(readmeApiUrl, { headers: { Accept: 'application/vnd.github.v3.raw' } })
+    .then(res => res.text())
+    .then(readme => {
+      const readmeDiv = widget.querySelector('.github-readme');
+      let preview = readme.slice(0, 500);
+      if (readme.length > 500) preview += '\n...';
+      readmeDiv.textContent = preview;
+    });
+})();

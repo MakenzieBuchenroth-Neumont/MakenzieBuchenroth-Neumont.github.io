@@ -76,14 +76,14 @@
                 </header>
 
                 <section class="about-text">
-                    <script>
-                        var myRepoWidget = new GithubRepoWidget('MakenzieBuchenroth-Neumont', 'UniversalChatRoom');
-                        myRepoWidget.addEvent('complete', function(response, widget){
-                        $('myElement').grab(widget);
-                        });
-                    </script>
-
                     <a href="https://universalchatroom-e2a6c6hqb8b8atbh.eastus-01.azurewebsites.net" target="_blank" class="contact-link">See the Universal Chat Room here!</a>
+
+                    <div id="github-widget" class="github-widget">
+                      <div class="github-repo-name"></div>
+                      <div class="github-repo-desc"></div>
+                      <div class="github-readme"></div>
+                    </div>
+
                     <p>Created in collaboration with 4 other developers for a 10-week class.</p>
                     <h2><i>A web–based chat room (hosted on Azure) that automatically translates messages so that users can chat in their own language.</i></h2>
 

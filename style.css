@@ -1508,3 +1508,48 @@ textarea.form-input {
 .main-content {
     margin-top: 0;
 }
+
+.github-widget {
+  background: var(--eerie-black1);
+  border: 1px solid var(--jet);
+  border-radius: 16px;
+  box-shadow: var(--shadow2);
+  padding: 18px 20px;
+  margin: 18px 0;
+  transition: transform 0.2s var(--transition1), box-shadow 0.2s var(--transition1);
+  max-width: 100%;
+  overflow: hidden;
+}
+.github-widget:hover {
+  transform: scale(1.04);
+  box-shadow: var(--shadow3);
+  z-index: 2;
+}
+.github-repo-name {
+  font-size: var(--fs4);
+  font-weight: var(--fw500);
+  color: var(--orange-yellow-crayola);
+  margin-bottom: 6px;
+}
+.github-repo-desc {
+  color: var(--light-gray);
+  font-size: var(--fs6);
+  margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.github-readme {
+  color: var(--white2);
+  font-size: var(--fs7);
+  max-height: 200px;
+  overflow: auto;
+  background: rgba(255,255,255,0.01);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+@media (max-width: 600px) {
+  .github-widget { padding: 12px 6px; }
+  .github-readme { font-size: var(--fs8); }
+}
