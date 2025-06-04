@@ -182,7 +182,8 @@ if (contactForm) {
             from_name: this.from_name.value,
             reply_to: this.reply_to.value,
             message: this.message.value,
-            to_email: 'kenziebuchenroth.professional@gmail.com'
+            to_name: 'Makenzie Buchenroth',
+            to_email: this.reply_to.value  // Use the sender's email from the form
         };
 
         // Send email using EmailJS
