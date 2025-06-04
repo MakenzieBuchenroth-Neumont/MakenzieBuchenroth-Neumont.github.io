@@ -180,10 +180,8 @@ if (contactForm) {
         // Get form data
         const formData = {
             from_name: this.from_name.value,
-            reply_to: this.reply_to.value,
-            message: this.message.value,
-            to_name: 'Makenzie Buchenroth',
-            to_email: this.reply_to.value  // Use the sender's email from the form
+            email: this.reply_to.value,  // Changed to match template variable
+            message: this.message.value
         };
 
         // Send email using EmailJS
