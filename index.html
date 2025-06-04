@@ -448,15 +448,15 @@
                 <section class="contact-form">
                     <h3 class="h3 form-title">Contact Form</h3>
 
-                    <form action="#" class="form" data-form>
+                    <form id="contact-form" class="form" data-form>
                         <div class="input-wrapper">
-                            <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-                            <input type="email" name="email" class="form-input" placeholder="Email Address" required data-form-input>
+                            <input type="text" name="from_name" class="form-input" placeholder="Full name" required data-form-input>
+                            <input type="email" name="reply_to" class="form-input" placeholder="Email Address" required data-form-input>
                         </div>
 
-                        <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input=""></textarea>
+                        <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
 
-                        <button class="form-btn" type="submit" disabled data-form-btn>
+                        <button class="form-btn" type="submit" data-form-btn>
                             <ion-icon name="paper-plane"></ion-icon>
                             <span>Send Message</span>
                         </button>
@@ -470,6 +470,12 @@
 
     <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("bomLPDx4vWYF73-aO"); // You'll need to replace this with your actual EmailJS public key
+        })();
+    </script>
 
 </body>
 </html>

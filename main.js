@@ -165,3 +165,44 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   });
 });
+
+// Contact form handling
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const button = this.querySelector('[data-form-btn]');
+        const originalText = button.innerHTML;
+        button.innerHTML = '<ion-icon name="hourglass-outline"></ion-icon><span>Sending...</span>';
+        button.disabled = true;
+
+        // Get form data
+        const formData = {
+            from_name: this.from_name.value,
+            reply_to: this.reply_to.value,
+            message: this.message.value,
+            to_email: 'kenziebuchenroth.professional@gmail.com'
+        };
+
+        // Send email using EmailJS
+        emailjs.send('service_je6nrg9', 'template_0fd75bp', formData)
+            .then(function() {
+                // Success
+                button.innerHTML = '<ion-icon name="checkmark-circle-outline"></ion-icon><span>Message Sent!</span>';
+                contactForm.reset();
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.disabled = false;
+                }, 3000);
+            }, function(error) {
+                // Error
+                button.innerHTML = '<ion-icon name="alert-circle-outline"></ion-icon><span>Error! Try Again</span>';
+                console.error('EmailJS error:', error);
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.disabled = false;
+                }, 3000);
+            });
+    });
+}
